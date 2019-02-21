@@ -42,7 +42,7 @@ func main() {
 		C.ed25519_verify(tranformToUchar(signature), tranformToUchar(message), messageLength, tranformToUchar(publicKey))
 	}
 	end := time.Now()
-	fmt.Println("each signature cost ", end.Sub(start)/10000)
+	fmt.Println("each signature verify cost ", end.Sub(start)/10000)
 }
 
 func tranformToUchar(src []uint8) *C.uchar {
